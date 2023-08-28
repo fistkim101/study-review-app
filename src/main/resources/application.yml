@@ -1,0 +1,49 @@
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: UTF-8
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+
+spring:
+  application:
+    name: study-review-app
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        default_batch_fetch_size: 500
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    generate-ddl: true
+    open-in-view: true
+    database: mysql
+
+database:
+  hikari:
+    maximum-pool-size: 50
+    minimum-idle: 20
+    max-lifetime: 180000
+    connection-timeout: 30000
+    idle-timeout: 30000
+    pool-prepared-statements: true
+    max-open-prepared-statements: 250
+  datasource-write:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbc-url: jdbc:mysql://localhost:3306/sra?autoReconnect=true&zeroDateTimeBehavior=convertToNull&useSSL=false&useUnicode=true&characterEncoding=utf8&tinyInt1isBit=false&serverTimezone=Asia/Seoul&rewriteBatchedStatements=true&allowPublicKeyRetrieval=true
+    username: root
+    password: root
+  datasource-read:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbc-url: jdbc:mysql://localhost:3306/sra?autoReconnect=true&zeroDateTimeBehavior=convertToNull&useSSL=false&useUnicode=true&characterEncoding=utf8&tinyInt1isBit=false&serverTimezone=Asia/Seoul&rewriteBatchedStatements=true&allowPublicKeyRetrieval=true
+    username: root
+    password: root
