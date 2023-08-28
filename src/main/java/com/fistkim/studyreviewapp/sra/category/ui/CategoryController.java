@@ -15,9 +15,9 @@ public class CategoryController {
     private final CategoryService categoryService;
 
     @PostMapping("/category")
-    public ResponseEntity<Void> createCategory(@RequestBody CreateCategoryCommand command) {
-        this.categoryService.createCategory(command);
-        return ResponseEntity.ok(null);
+    public ResponseEntity<CategoryDetail> createCategory(@RequestBody CreateCategoryCommand command) {
+        final CategoryDetail createdCategory = this.categoryService.createCategory(command);
+        return ResponseEntity.ok(createdCategory);
     }
 
     @PutMapping("/category/{id}")

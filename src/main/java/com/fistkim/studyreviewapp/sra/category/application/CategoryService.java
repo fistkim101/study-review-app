@@ -14,12 +14,14 @@ public class CategoryService {
 
     private final CategoryRepository categoryRepository;
 
-    public void createCategory(CreateCategoryCommand command) {
+    public CategoryDetail createCategory(CreateCategoryCommand command) {
         final Category category = Category.builder()
                 .categoryType(command.categoryType())
                 .name(command.name())
                 .build();
         this.categoryRepository.save(category);
+
+        return CategoryDetail.fromCategory(category);
     }
 
     public void updateCategory(Long id, UpdateCategoryCommand command) {
