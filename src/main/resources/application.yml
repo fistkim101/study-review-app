@@ -22,7 +22,7 @@ spring:
         format_sql: true
         default_batch_fetch_size: 500
     hibernate:
-      ddl-auto: update
+      ddl-auto: update # 절대 바꾸면 안됨.
     show-sql: true
     generate-ddl: true
     open-in-view: true
