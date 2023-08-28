@@ -41,7 +41,7 @@ public class Unit {
     @Comment(value = "질문")
     private String question;
 
-    @Column(name = "answer", nullable = false)
+    @Column(name = "answer", nullable = false, columnDefinition = "TEXT")
     @Comment(value = "답변")
     private String answer;
 
