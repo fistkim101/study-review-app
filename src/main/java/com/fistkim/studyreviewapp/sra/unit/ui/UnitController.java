@@ -29,8 +29,8 @@ public class UnitController {
         return ResponseEntity.ok(updatedUnit);
     }
 
-    @PutMapping("/unit/{id}/review")
-    public ResponseEntity<UnitDetail> reviewUnit(@PathVariable(value = "id") Long id, @RequestParam(value = "isCorrect") boolean isCorrect) {
+    @PutMapping("/unit/review")
+    public ResponseEntity<UnitDetail> reviewUnit(@RequestParam(value = "id") Long id, @RequestParam(value = "isCorrect") boolean isCorrect) {
         final UnitDetail reviewedUnit = this.unitService.reviewUnit(id, isCorrect);
         return ResponseEntity.ok(reviewedUnit);
     }
